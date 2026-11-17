@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    container_name: phong-cham-miv
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-8080}:8080"
+    volumes:
+      - miv-data:/app/data   # tai khoan + diem cham, giu nguyen khi build lai
+
+volumes:
+  miv-data:
